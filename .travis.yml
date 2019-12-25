@@ -16,7 +16,9 @@ language: cpp
 before_install:
   - sudo apt-get -y install ${MYPACKAGES}
 
-env: MYCC=gcc-5 MYCXX=g++-5 MYPACKAGES="g++-5"
+env:
+  - MYCC=gcc-5 MYCXX=g++-5 MYPACKAGES="g++-5 python3-dev"
+  - MYCC=gcc-6 MYCXX=g++-6 MYPACKAGES="g++-6 python3-dev"
 
 arch:
   - amd64
