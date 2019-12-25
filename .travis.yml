@@ -11,6 +11,10 @@ branches:
 # Enable C++ support
 language: cpp
 
+arch:
+  - amd64
+  - arm64
+
 # Need MYCC and MYCXX as travis overwrites CC and CXX
 
 matrix:
