@@ -32,6 +32,11 @@ arch:
   - amd64
   - arm64
 
+jobs:
+  exclude:
+    - arch: arm64
+      env: MYCC=clang-5.0 MYCXX=clang++-5.0 MYPACKAGES="clang-5.0 python3-dev"
+
 # Build steps
 script:
   - mkdir build
