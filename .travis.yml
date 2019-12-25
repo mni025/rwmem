@@ -13,75 +13,84 @@ language: cpp
 
 # Need MYCC and MYCXX as travis overwrites CC and CXX
 
-matrix:
-  include:
-    - compiler: gcc
-      addons:
-        apt:
-          packages: ['g++-5']
-      env: MYCC=gcc-5 MYCXX=g++-5
-      arch: amd64
+before_install:
+  - sudo apt-get -y install ${MYPACKAGES}
 
-    - compiler: gcc
-      addons:
-        apt:
-          packages: ['g++-5', 'python3-dev']
-      env: MYCC=gcc-5 MYCXX=g++-5
-      arch: arm64
+env: MYCC=gcc-5 MYCXX=g++-5 MYPACKAGES="g++-5"
 
-    - compiler: gcc
-      addons:
-        apt:
-          packages: ['g++-6']
-      env: MYCC=gcc-6 MYCXX=g++-6
+arch:
+  - amd64
+  - arm64
 
-    - compiler: gcc
-      addons:
-        apt:
-          packages: ['g++-7']
-      env: MYCC=gcc-7 MYCXX=g++-7
-
-    - compiler: gcc
-      addons:
-        apt:
-          packages: ['g++-8']
-      env: MYCC=gcc-8 MYCXX=g++-8
-
-    - compiler: clang
-      addons:
-        apt:
-          packages: ['clang-3.9']
-      env: MYCC=clang-3.9 MYCXX=clang++-3.9
-
-    - compiler: clang
-      addons:
-        apt:
-          packages: ['clang-4.0']
-      env: MYCC=clang-4.0 MYCXX=clang++-4.0
-
-    - compiler: clang
-      addons:
-        apt:
-          packages: ['clang-5.0']
-      env: MYCC=clang-5.0 MYCXX=clang++-5.0
-
-    - compiler: clang
-      addons:
-        apt:
-          packages: ['clang-6.0']
-      env: MYCC=clang-6.0 MYCXX=clang++-6.0
-
-    - compiler: clang
-      addons:
-        apt:
-          packages: ['clang-7']
-      env: MYCC=clang-7 MYCXX=clang++-7
-
-    - compiler: clang
-      addons:
-        apt:
-          packages: ['clang-8']
-      env: MYCC=clang-8 MYCXX=clang++-8
+#matrix:
+#  include:
+#    - compiler: gcc
+#      addons:
+#        apt:
+#          packages: ['g++-5']
+#      env: MYCC=gcc-5 MYCXX=g++-5
+#      arch: amd64
+#
+#    - compiler: gcc
+#      addons:
+#        apt:
+#          packages: ['g++-5', 'python3-dev']
+#      env: MYCC=gcc-5 MYCXX=g++-5
+#      arch: arm64
+#
+#    - compiler: gcc
+#      addons:
+#        apt:
+#          packages: ['g++-6']
+#      env: MYCC=gcc-6 MYCXX=g++-6
+#
+#    - compiler: gcc
+#      addons:
+#        apt:
+#          packages: ['g++-7']
+#      env: MYCC=gcc-7 MYCXX=g++-7
+#
+#    - compiler: gcc
+#      addons:
+#        apt:
+#          packages: ['g++-8']
+#      env: MYCC=gcc-8 MYCXX=g++-8
+#
+#    - compiler: clang
+#      addons:
+#        apt:
+#          packages: ['clang-3.9']
+#      env: MYCC=clang-3.9 MYCXX=clang++-3.9
+#
+#    - compiler: clang
+#      addons:
+#        apt:
+#          packages: ['clang-4.0']
+#      env: MYCC=clang-4.0 MYCXX=clang++-4.0
+#
+#    - compiler: clang
+#      addons:
+#        apt:
+#          packages: ['clang-5.0']
+#      env: MYCC=clang-5.0 MYCXX=clang++-5.0
+#
+#    - compiler: clang
+#      addons:
+#        apt:
+#          packages: ['clang-6.0']
+#      env: MYCC=clang-6.0 MYCXX=clang++-6.0
+#
+#    - compiler: clang
+#      addons:
+#        apt:
+#          packages: ['clang-7']
+#      env: MYCC=clang-7 MYCXX=clang++-7
+#
+#    - compiler: clang
+#      addons:
+#        apt:
+#          packages: ['clang-8']
+#      env: MYCC=clang-8 MYCXX=clang++-8
 
 # Build steps
 script:
