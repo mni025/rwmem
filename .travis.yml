@@ -19,80 +19,18 @@ before_install:
 env:
   - MYCC=gcc-5 MYCXX=g++-5 MYPACKAGES="g++-5 python3-dev"
   - MYCC=gcc-6 MYCXX=g++-6 MYPACKAGES="g++-6 python3-dev"
+  - MYCC=gcc-7 MYCXX=g++-7 MYPACKAGES="g++-7 python3-dev"
+  - MYCC=gcc-8 MYCXX=g++-8 MYPACKAGES="g++-8 python3-dev"
+  - MYCC=clang-3.9 MYCXX=clang++-3.9 MYPACKAGES="clang-3.9 python3-dev"
+  - MYCC=clang-4.0 MYCXX=clang++-4.0 MYPACKAGES="clang-4.0 python3-dev"
+  - MYCC=clang-5.0 MYCXX=clang++-5.0 MYPACKAGES="clang-5.0 python3-dev"
+  - MYCC=clang-6.0 MYCXX=clang++-6.0 MYPACKAGES="clang-6.0 python3-dev"
+  - MYCC=clang-7 MYCXX=clang++-7 MYPACKAGES="clang-7 python3-dev"
+  - MYCC=clang-8 MYCXX=clang++-8 MYPACKAGES="clang-8 python3-dev"
 
 arch:
   - amd64
   - arm64
-
-#matrix:
-#  include:
-#    - compiler: gcc
-#      addons:
-#        apt:
-#          packages: ['g++-5']
-#      env: MYCC=gcc-5 MYCXX=g++-5
-#      arch: amd64
-#
-#    - compiler: gcc
-#      addons:
-#        apt:
-#          packages: ['g++-5', 'python3-dev']
-#      env: MYCC=gcc-5 MYCXX=g++-5
-#      arch: arm64
-#
-#    - compiler: gcc
-#      addons:
-#        apt:
-#          packages: ['g++-6']
-#      env: MYCC=gcc-6 MYCXX=g++-6
-#
-#    - compiler: gcc
-#      addons:
-#        apt:
-#          packages: ['g++-7']
-#      env: MYCC=gcc-7 MYCXX=g++-7
-#
-#    - compiler: gcc
-#      addons:
-#        apt:
-#          packages: ['g++-8']
-#      env: MYCC=gcc-8 MYCXX=g++-8
-#
-#    - compiler: clang
-#      addons:
-#        apt:
-#          packages: ['clang-3.9']
-#      env: MYCC=clang-3.9 MYCXX=clang++-3.9
-#
-#    - compiler: clang
-#      addons:
-#        apt:
-#          packages: ['clang-4.0']
-#      env: MYCC=clang-4.0 MYCXX=clang++-4.0
-#
-#    - compiler: clang
-#      addons:
-#        apt:
-#          packages: ['clang-5.0']
-#      env: MYCC=clang-5.0 MYCXX=clang++-5.0
-#
-#    - compiler: clang
-#      addons:
-#        apt:
-#          packages: ['clang-6.0']
-#      env: MYCC=clang-6.0 MYCXX=clang++-6.0
-#
-#    - compiler: clang
-#      addons:
-#        apt:
-#          packages: ['clang-7']
-#      env: MYCC=clang-7 MYCXX=clang++-7
-#
-#    - compiler: clang
-#      addons:
-#        apt:
-#          packages: ['clang-8']
-#      env: MYCC=clang-8 MYCXX=clang++-8
 
 # Build steps
 script:
