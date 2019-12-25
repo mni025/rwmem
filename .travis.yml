@@ -11,10 +11,6 @@ branches:
 # Enable C++ support
 language: cpp
 
-arch:
-  - amd64
-  - arm64
-
 # Need MYCC and MYCXX as travis overwrites CC and CXX
 
 matrix:
@@ -24,6 +20,14 @@ matrix:
         apt:
           packages: ['g++-5']
       env: MYCC=gcc-5 MYCXX=g++-5
+      arch: amd64
+
+    - compiler: gcc
+      addons:
+        apt:
+          packages: ['g++-5', 'python3-dev']
+      env: MYCC=gcc-5 MYCXX=g++-5
+      arch: arm64
 
     - compiler: gcc
       addons:
