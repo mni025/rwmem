@@ -32,6 +32,7 @@ arch:
   - amd64
   - arm64
 
+# clang-5 for arm64 is missing
 jobs:
   exclude:
     - arch: arm64
